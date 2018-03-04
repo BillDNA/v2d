@@ -111,8 +111,14 @@ function windowResized() {
     A[ai].reset(true);
 
 }
+function keyRelased() {{
+    if(keyCode === UP_ARROW) {
+	    var fs = fullscreen();
+	    fullscreen(!fs);
+    }
+}
+}
 function mouseReleased() {
-	var fs = fullscreen();
     A[ai].reset(true,!fs);
 }
 function getRandomInt(min, max) {
