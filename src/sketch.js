@@ -117,7 +117,7 @@ function keyRelased() {{
 }
 }
 function mouseReleased() {
-    A[ai].reset(true,!fs);
+    A[ai].reset(true);
 }
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
