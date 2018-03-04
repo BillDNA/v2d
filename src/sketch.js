@@ -109,6 +109,8 @@ function windowResized() {
 }
 function mouseReleased() {
     A[ai].reset(true);
+	var fs = fullscreen();
+	fullscreen(!fs);
 }
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
