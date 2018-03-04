@@ -75,8 +75,6 @@ var A = [
             if(resize) {
                 resizeCanvas(windowWidth, windowHeight);
             }
-            fs = fs === undefined ? false : fs;
-            fullScreen(fs);
         },
         newSpot: function(lastSpot) {
             var m = mic.getLevel();
