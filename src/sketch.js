@@ -56,7 +56,7 @@ var A = [
             rect(windowWidth - spot.x,spot.y,A[0].step,A[0].step,spot.r);
             rect( spot.x,windowHeight - spot.y,A[0].step,A[0].step,spot.r);
         },
-        reset: function(resize) {
+        reset: function(resize, fs) {
             if(mic === undefined) {
                 mic = new p5.AudioIn();
                 mic.start();
@@ -72,7 +72,11 @@ var A = [
             A[0].fft = new p5.FFT();
             A[0].fft.setInput(mic);
 
-            if(resize) {resizeCanvas(windowWidth, windowHeight);}
+            if(resize) {
+                resizeCanvas(windowWidth, windowHeight);
+            }
+            fs = fs === undefined ? false : fs;
+            fullScreen(fs);
         },
         newSpot: function(lastSpot) {
             var m = mic.getLevel();
@@ -108,9 +112,8 @@ function windowResized() {
 
 }
 function mouseReleased() {
-    A[ai].reset(true);
 	var fs = fullscreen();
-	fullscreen(!fs);
+    A[ai].reset(true,!fs);
 }
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
