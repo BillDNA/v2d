@@ -58,8 +58,6 @@ var A = [
         },
         reset: function(resize) {
             if(mic === undefined) {
-                mic = new p5.AudioIn();
-                mic.start();
             }
             var s = {
                 x:windowWidth/2,
@@ -95,6 +93,8 @@ function setup() {
     createCanvas(windowWidth,windowHeight);
     colorMode(RGB);
     c = color(0);
+                mic = new p5.AudioIn();
+                mic.start();
     A[ai].reset(false);
 }
 
