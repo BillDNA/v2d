@@ -100,6 +100,9 @@ function setup() {
 
 function draw() {
     clear();
+    if (getAudioContext().state !== 'running') {
+        getAudioContext().resume();
+    }
     background(c);
     A[ai].draw();
 }
