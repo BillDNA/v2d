@@ -93,8 +93,8 @@ function setup() {
     createCanvas(windowWidth,windowHeight);
     colorMode(RGB);
     c = color(0);
-                mic = new p5.AudioIn();
-                mic.start();
+    mic = new p5.AudioIn();
+    mic.start();
     A[ai].reset(false);
 }
 
